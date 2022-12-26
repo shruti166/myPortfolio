@@ -16,30 +16,30 @@ body {
   position: absolute;
   pointer-events: none;
   z-index: 100;
-  top: -30px;
-  height: 40px;
+  top: 30px;
+  height: 190px;
   width: 100vw;
   opacity: 0.5;
   filter: blur(40px);
   background: radial-gradient(
     circle,
-    rgba(248, 107, 223, 1) 0%,
-    rgba(107, 107, 248, 0.8) 100%
+    rgb(107, 46, 96) 0%,
+    rgba(70, 70, 168, 0.8) 100%
   );
 }
 .gradient-circle-bottom {
   position: absolute;
   pointer-events: none;
   z-index: 100;
-  bottom: -20px;
+  bottom: 190px;
   height: 30px;
   width: 100vw;
   opacity: 0.5;
   filter: blur(40px);
   background: radial-gradient(
     circle,
-    rgba(248, 107, 223, 1) 0%,
-    rgba(107, 107, 248, 0.8) 100%
+    rgb(126, 54, 127) 0%,
+    rgba(9, 9, 114, 0.8) 100%
   );
 }
 
@@ -74,4 +74,15 @@ body {
   left: 0;
   background: inherit;
   border-radius: inherit;
+}
+
+.photo{
+  
+border-radius: 190px;
+  
+ 
+  
+}
+.mt-5 {
+  
 }
