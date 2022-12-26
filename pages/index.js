@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import Header from "../components/Header";
-import ServiceCard from "../components/ServiceCard";
+import Image from "next/image";
 import Socials from "../components/Socials";
 import WorkCard from "../components/WorkCard";
 import { useIsomorphicLayoutEffect } from "../utils";
@@ -14,6 +14,7 @@ import Cursor from "../components/Cursor";
 // Local Data
 import data from "../data/portfolio.json";
 import About from "../components/About";
+
 
 export default function Home() {
   // Ref
@@ -140,7 +141,7 @@ export default function Home() {
           <h1 className="tablet:m-10 text-2xl text-bold">About and Skills</h1>
           <p className="tablet:m-10 mt-2 text-xl laptop:text-xl w-full laptop:w-3/5">
             {data.aboutpara}
-            <img className = "photo" src="https://avatars.githubusercontent.com/u/100379404?v=4" alt="" width={300} />
+            {/* <Image className = "photo" src="https://avatars.githubusercontent.com/u/100379404?v=4" alt="pic" width={300} /> */}
           </p>
           <h2>My Skill includes</h2>
           <li>Languages : JAVA | JAVASCRIPT | HTML | CSS</li>
