@@ -3106,11 +3106,6 @@
   "resolved" "https://registry.npmjs.org/yaml/-/yaml-1.10.2.tgz"
   "version" "1.10.2"
 
-"yarn@^1.22.19":
-  "integrity" "sha512-/0V5q0WbslqnwP91tirOvldvYISzaqhClxzyUKXYxs07yUILIs5jx/k6CFe8bvKSkds5w+eiOqta39Wk3WxdcQ=="
-  "resolved" "https://registry.npmjs.org/yarn/-/yarn-1.22.19.tgz"
-  "version" "1.22.19"
-
 "zwitch@^2.0.0":
   "integrity" "sha512-JZxotl7SxAJH0j7dN4pxsTV6ZLXoLdGME+PsjkL/DaBrVryK9kTGq06GfKrwcSOqypP+fdXGoCHE36b99fWVoA=="
   "resolved" "https://registry.npmjs.org/zwitch/-/zwitch-2.0.2.tgz"

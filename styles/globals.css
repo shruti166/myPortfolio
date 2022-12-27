@@ -16,30 +16,30 @@ body {
   position: absolute;
   pointer-events: none;
   z-index: 100;
-  top: 30px;
-  height: 190px;
+  top: 130px;
+  height: 100px;
   width: 100vw;
   opacity: 0.5;
   filter: blur(40px);
   background: radial-gradient(
     circle,
-    rgb(107, 46, 96) 0%,
-    rgba(70, 70, 168, 0.8) 100%
+    rgb(154, 73, 139) 0%,
+    rgba(69, 69, 162, 0.8) 100%
   );
 }
 .gradient-circle-bottom {
   position: absolute;
   pointer-events: none;
   z-index: 100;
-  bottom: 190px;
+  bottom: 120px;
   height: 30px;
   width: 100vw;
   opacity: 0.5;
   filter: blur(40px);
   background: radial-gradient(
     circle,
-    rgb(126, 54, 127) 0%,
-    rgba(9, 9, 114, 0.8) 100%
+    rgb(159, 77, 144) 0%,
+    rgba(81, 81, 182, 0.8) 100%
   );
 }
 
@@ -75,14 +75,12 @@ body {
   background: inherit;
   border-radius: inherit;
 }
-
-.photo{
-  
-border-radius: 190px;
-  
- 
-  
+.photo {
+  border-radius: 1000px;
+  width: 280px;
 }
-.mt-5 {
-  
+.picLogo {
+  border-radius: 900px;
+  width: 250px;
+
 }

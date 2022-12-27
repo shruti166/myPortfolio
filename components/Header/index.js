@@ -5,7 +5,6 @@ import React, { useEffect, useState } from "react";
 import Button from "../Button";
 // Local Data
 import data from "../../data/portfolio.json";
-import Image from "next/image";
 
 const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
   const router = useRouter();
@@ -13,6 +12,11 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
   const [mounted, setMounted] = useState(false);
 
   const { name, showBlog, showResume } = data;
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const onButtonClick = () => {
     // using Java Script method to get PDF file
     fetch('Shruti_Joshi_Resume.pdf').then(response => {
@@ -28,10 +32,6 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
     })
 } 
 
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   return (
     <>
@@ -53,20 +53,18 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                       setTheme(theme === "dark" ? "light" : "dark")
                     }
                   >
-                    <Image
+                    <img
                       className="h-6"
-                      alt =""
                       src={`/images/${
                         theme === "dark" ? "moon.svg" : "sun.svg"
                       }`}
-                    />
+                    ></img>
                   </Button>
                 )}
 
                 <Popover.Button>
-                  <Image
+                  <img
                     className="h-5"
-                    alt = ""
                     src={`/images/${
                       !open
                         ? theme === "dark"
@@ -76,7 +74,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                         ? "cancel.svg"
                         : "cancel-white.svg"
                     }`}
-                  />
+                  ></img>
                 </Popover.Button>
               </div>
             </div>
@@ -89,11 +87,13 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                 <div className="grid grid-cols-1">
                   <Button onClick={handleWorkScroll}>Work</Button>
                   <Button onClick={handleAboutScroll}>About</Button>
-                  
+                  {showBlog && (
+                    <Button onClick={() => router.push("/blog")}>Blog</Button>
+                  )}
                   {showResume && (
                     <Button
                       onClick={() =>
-                        window.open("mailto:hello@shrutitiech98@gmail.com")
+                        window.open("mailto:hello@chetanverma.com")
                       }
                     >
                       Resume
@@ -101,7 +101,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                   )}
 
                   <Button
-                    onClick={() => window.open("mailto:shrutitech98@gmail.com")}
+                    onClick={() => window.open("mailto:hello@chetanverma.com")}
                   >
                     Contact
                   </Button>
@@ -111,10 +111,20 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                   <Button onClick={() => router.push("/")} classes="first:ml-1">
                     Home
                   </Button>
-                 
+                  {showBlog && (
+                    <Button onClick={() => router.push("/blog")}>Blog</Button>
+                  )}
+                  {showResume && (
+                    <Button
+                      onClick={() => router.push("/resume")}
+                      classes="first:ml-1"
+                    >
+                      Resume
+                    </Button>
+                  )}
 
                   <Button
-                    onClick={() => window.open("mailto:shrutitech98@gmail.com")}
+                    onClick={() => window.open("mailto:hello@chetanverma.com")}
                   >
                     Contact
                   </Button>
@@ -131,7 +141,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
       >
         <h1
           onClick={() => router.push("/")}
-          className="font-large cursor-pointer mob:p-2 laptop:p-0"
+          className="font-medium cursor-pointer mob:p-2 laptop:p-0"
         >
           {name}.
         </h1>
@@ -139,42 +149,48 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
           <div className="flex">
             <Button onClick={handleWorkScroll}>Work</Button>
             <Button onClick={handleAboutScroll}>About</Button>
-            
+            {showBlog && (
+              <Button onClick={() => router.push("/blog")}>Blog</Button>
+            )}
             {showResume && (
               <Button
                 onClick={onButtonClick}
+                classes="first:ml-1"
               >
                 Resume
               </Button>
             )}
 
-            <Button onClick={() => window.open("mailto:shrutitech98@gmail.com")}>
+            <Button onClick={() => window.open("mailto:hello@chetanverma.com")}>
               Contact
             </Button>
             {mounted && theme && data.darkMode && (
               <Button
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               >
-                <Image
-                  className="h-6" alt = ""
+                <img
+                  className="h-6"
                   src={`/images/${theme === "dark" ? "moon.svg" : "sun.svg"}`}
-                />
+                ></img>
               </Button>
             )}
           </div>
         ) : (
           <div className="flex">
             <Button onClick={() => router.push("/")}>Home</Button>
-           
+            {showBlog && (
+              <Button onClick={() => router.push("/blog")}>Blog</Button>
+            )}
             {showResume && (
               <Button
-                onClick={onButtonClick}
+                onClick={() => router.push("/resume")}
+                classes="first:ml-1"
               >
                 Resume
               </Button>
             )}
 
-            <Button onClick={() => window.open("mailto:shrutitech98@gmail.com")}>
+            <Button onClick={() => window.open("mailto:hello@chetanverma.com")}>
               Contact
             </Button>
 
@@ -182,10 +198,10 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
               <Button
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               >
-                <Image
-                  className="h-6" alt = ""
+                <img
+                  className="h-6"
                   src={`/images/${theme === "dark" ? "moon.svg" : "sun.svg"}`}
-                />
+                ></img>
               </Button>
             )}
           </div>

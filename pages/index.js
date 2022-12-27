@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import Header from "../components/Header";
-import Image from "next/image";
+import ServiceCard from "../components/ServiceCard";
 import Socials from "../components/Socials";
 import WorkCard from "../components/WorkCard";
 import { useIsomorphicLayoutEffect } from "../utils";
@@ -10,11 +10,10 @@ import Head from "next/head";
 import Button from "../components/Button";
 import Link from "next/link";
 import Cursor from "../components/Cursor";
+import About from "../components/About";
 
 // Local Data
 import data from "../data/portfolio.json";
-import About from "../components/About";
-
 
 export default function Home() {
   // Ref
@@ -65,42 +64,38 @@ export default function Home() {
           handleWorkScroll={handleWorkScroll}
           handleAboutScroll={handleAboutScroll}
         />
-      
         <div className="laptop:mt-20 mt-10">
-          <div className="mt-5" >
+          <div className="mt-5">
             <h1
               ref={textOne}
-              className="text-3xl tablet:text-3xl laptop:text-3xl laptopl:text-5xl p-1 tablet:p-2 text-bold w-4/5 mob:w-full laptop:w-4/5"
+              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-6xl p-1 tablet:p-2 text-bold w-4/5 mob:w-full laptop:w-4/5"
             >
               {data.headerTaglineOne}
             </h1>
             <h1
               ref={textTwo}
-              className="text-3xl tablet:text-3xl laptop:text-3xl laptopl:text-5xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
+              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-6xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
             >
               {data.headerTaglineTwo}
             </h1>
             <h1
               ref={textThree}
-              className="text-3xl tablet:text-3xl laptop:text-3xl laptopl:text-5xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
+              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-6xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
             >
               {data.headerTaglineThree}
             </h1>
             <h1
               ref={textFour}
-              className="text-3xl tablet:text-3xl laptop:text-3xl laptopl:text-5xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
+              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-6xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
             >
               {data.headerTaglineFour}
             </h1>
-            </div>
-            <div>
-              <About/>
-            </div>
-            
+            <img src="https://miro.medium.com/max/1400/1*qdAW1TjCN57h1lbuuzvchg.gif" className = "picLogo" alt="piclogo" />
           </div>
 
+
           <Socials className="mt-2 laptop:mt-5" />
-      </div>
+        </div>
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
           <h1 className="text-2xl text-bold">My Recent Works.</h1>
 
@@ -114,11 +109,11 @@ export default function Home() {
                 onClick={() => window.open(project.url)}
               />
             ))}
-          
+          </div>
         </div>
 
-        {/* <div className="mt-10 laptop:mt-30 p-2 laptop:p-0">
-          <h1 className="tablet:m-10 text-2xl text-bold">Services.</h1>
+        <div className="mt-10 laptop:mt-30 p-2 laptop:p-0">
+          <h1 className="tablet:m-10 text-3xl text-bold">Skill Section.</h1>
           <div className="mt-5 tablet:m-10 grid grid-cols-1 laptop:grid-cols-2 gap-6">
             {data.services.map((service, index) => (
               <ServiceCard
@@ -126,8 +121,8 @@ export default function Home() {
                 name={service.title}
                 description={service.description}
               />
-            ))} */}
-          {/* </div>
+            ))}
+          </div>
         </div>
         {/* This button should not go into production */}
         {/* {process.env.NODE_ENV === "development" && (
@@ -136,19 +131,13 @@ export default function Home() {
               <Button type="primary">Edit Data</Button>
             </Link>
           </div>
-        )} */} 
+        )} */}
         <div className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={aboutRef}>
-          <h1 className="tablet:m-10 text-2xl text-bold">About and Skills</h1>
+          <h1 className="tablet:m-10 text-3xl text-bold">About.</h1>
           <p className="tablet:m-10 mt-2 text-xl laptop:text-xl w-full laptop:w-3/5">
             {data.aboutpara}
-            {/* <Image className = "photo" src="https://avatars.githubusercontent.com/u/100379404?v=4" alt="pic" width={300} /> */}
           </p>
-          <h2>My Skill includes</h2>
-          <li>Languages : JAVA | JAVASCRIPT | HTML | CSS</li>
-          <li>Frameworks: REACT</li>
-          <li>Database : Mongo dB</li>
-          <li>Tools : VS code | POSTMAN | GIT HUB</li>
-          <li>Others : Redux | Express | Chakra UI</li>
+          <About/>
         </div>
         <Footer />
       </div>
