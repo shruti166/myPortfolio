@@ -17,21 +17,19 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
     setMounted(true);
   }, []);
 
-  const onButtonClick = () => {
-    // using Java Script method to get PDF file
-    fetch('Shruti_Joshi_Resume.pdf').then(response => {
-        response.blob().then((blob) => {
-            // Creating new object of PDF file
-            const fileURL = window.URL.createObjectURL(blob);
-            // Setting various property values
-            let alink = document.createElement('a');
-            alink.href = fileURL;
-            alink.download = 'Shruti_Joshi_Resume.pdf';
-            alink.click();
-        })
-    })
-} 
-
+  // const onButtonClick = () => {
+  //   // using Java Script method to get PDF file
+  //   fetch('Shruti_Joshi_Resume.pdf').then(response => {
+  //       response.blob().then((blob) => {
+  //           // Creating new object of PDF file
+  //           const fileURL = window.URL.createObjectURL(blob);
+  //           // Setting various property values
+  //           let alink = document.createElement('a');
+  //           alink.href = fileURL;
+  //           alink.download = 'Shruti_Joshi_Resume.pdf';
+  //           alink.click();
+  //       })
+  //   })
 
   return (
     <>
@@ -93,7 +91,9 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                   {showResume && (
                     <Button
                       onClick={() =>
-                        window.open("mailto:shrutitech98@gmail.com")
+                        window.open(
+                          "https://drive.google.com/file/d/1PoqkLk2-PPnLr0CG7_aJZuXUw_0ANUeT/view?usp=share_link"
+                        )
                       }
                     >
                       Resume
@@ -116,8 +116,11 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                   )}
                   {showResume && (
                     <Button
-                      onClick={() => router.push("/resume")}
-                      classes="first:ml-1"
+                      onClick={() =>
+                        window.open(
+                          "https://drive.google.com/file/d/1PoqkLk2-PPnLr0CG7_aJZuXUw_0ANUeT/view?usp=share_link"
+                        )
+                      }
                     >
                       Resume
                     </Button>
@@ -155,14 +158,19 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
             )}
             {showResume && (
               <Button
-                onClick={onButtonClick}
-                classes="first:ml-1"
+                onClick={() =>
+                  window.open(
+                    "https://drive.google.com/file/d/1PoqkLk2-PPnLr0CG7_aJZuXUw_0ANUeT/view?usp=share_link"
+                  )
+                }
               >
                 Resume
               </Button>
             )}
 
-            <Button onClick={() => window.open("mailto:shrutitech98@gmail.com")}>
+            <Button
+              onClick={() => window.open("mailto:shrutitech98@gmail.com")}
+            >
               Contact
             </Button>
             {mounted && theme && data.darkMode && (
@@ -184,14 +192,20 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
             )}
             {showResume && (
               <Button
-                onClick={() => router.push("/resume")}
+                onClick={() =>
+                  window.open(
+                    "https://drive.google.com/file/d/1PoqkLk2-PPnLr0CG7_aJZuXUw_0ANUeT/view?usp=share_link"
+                  )
+                }
                 classes="first:ml-1"
               >
                 Resume
               </Button>
             )}
 
-            <Button onClick={() => window.open("mailto:shrutitech98@gmail.com")}>
+            <Button
+              onClick={() => window.open("mailto:shrutitech98@gmail.com")}
+            >
               Contact
             </Button>
 
